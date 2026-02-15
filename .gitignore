@@ -1,0 +1,40 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Docker
+*.tar
+
+# ML models (optional - if large)
+*.pkl
+*.joblib
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Pip
+pip-wheel-metadata/
