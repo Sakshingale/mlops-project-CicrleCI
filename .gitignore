@@ -1,4 +1,6 @@
 # Virtual Environment
+MLOPS_PROJECT-6.egg-info/
+gcp-key.json
 venv/
 env/
 ENV/
