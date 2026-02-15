@@ -33,6 +33,10 @@ jobs:
       - run:
           name: Build and Push Image
           command: |
+              if [ -z "$GOOGLE_PROJECT_ID" ]; then
+                echo "Error: GOOGLE_PROJECT_ID environment variable is not set"
+                exit 1
+              fi
               docker build -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/mlops-app/mlops-app:latest .
               docker push us-central1-docker.pkg.dev/$GOOGLE_PROJECT_ID/mlops-app/mlops-app:latest
 
@@ -57,6 +61,10 @@ jobs:
       - run:
           name: Configure GKE
           command: |
+              if [ -z "$GOOGLE_PROJECT_ID" ] || [ -z "$GKE_CLUSTER" ] || [ -z "$GOOGLE_COMPUTE_REGION" ]; then
+                echo "Error: Required environment variables are not set (GOOGLE_PROJECT_ID, GKE_CLUSTER, GOOGLE_COMPUTE_REGION)"
+                exit 1
+              fi
               gcloud container clusters get-credentials $GKE_CLUSTER --region $GOOGLE_COMPUTE_REGION --project $GOOGLE_PROJECT_ID
       - run:
           name: Deploy to GKE
