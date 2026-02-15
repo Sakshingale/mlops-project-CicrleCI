@@ -8,10 +8,10 @@ def get_requirements(file_path):
     return requirements
 
 setup(
-    name="mlops_project_6",   # avoid hyphens in package name
+    name="MLOPS-Project-6",   # avoid hyphens in package name
     version="0.1.0",
     author="Sakshi Ingale",
     packages=find_packages(),
     install_requires=get_requirements("requirements.txt"),
-    python_requires=">=3.8",
+    python_requires=">=3.13.9",
 )
